@@ -1,14 +1,17 @@
-
-
 <template>
   <div>
-    <h4 class="Title">맛라딘 v1.2</h4>
+    <p class="Title">맛라딘 v2.1</p>
     <img class="profile" src="../assets/profile_image.png">
-    <h4 class="paragraph" style="top: 50px; font-weight: 200;">나의 맛BTI를 파악하고</h4>
-    <h4 class="paragraph" style="top: 25px;">맛집과 메뉴를 추천받아요</h4>
+    <p class="paragraph" style="top: 55px; font-weight: 200;">나의 맛BTI를 파악하고</p>
+    <p class="paragraph" style="top: 30px; font-weight: 100;">맛집과 메뉴를 추천받아요</p>
     <Button class="Button_h" v-on:click="push_about">시작하기</Button>
+    <p class="titledocs">오늘 점심 뭐먹지? 어디서 식사하지? 고민하는 시간이 <br> 아까운 당신! 빠르게 정보를 찾아보아요.</p>
+    <div @click="modal_isOpen = true">
+      <img class="share_small" src="../assets/Share_small.png">
+    </div>
   </div>
 </template>
+
 
 <script>
 import router from '../router';
@@ -18,7 +21,7 @@ import router from '../router';
 export default {
   methods : {
     push_about(){
-      router.push("/about");
+      router.push("/page1");
     }
   }
 }

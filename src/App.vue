@@ -1,7 +1,13 @@
 <!-- App.vue -->
-
 <template>
   <div class="background">
+    <div class="black-bg" v-if="modal_isOpen">
+    <div class="white-bg">
+      <h4>이런!</h4>
+      <p>추후 업데이트 예정입니다</p>
+      <button v-on:click="modal_isOpen = false">닫기</button>
+    </div>
+  </div>
     <router-view/>
   </div>
 </template>
@@ -15,6 +21,7 @@ export default {
   },
   data(){
     return {
+      modal_isOpen : false,
     }
   },
   methods : {
@@ -23,6 +30,55 @@ export default {
 </script>
 
 <style>
+.Question{
+position: relative;
+width: 328px;
+height: 36px;
+left: calc(50% - 328px/2);
+top: 132px;
+font-family: 'Heading1';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 36px;
+color: #000000;
+}
+.prefix{
+position: absolute;
+width: 328px;
+height: 16px;
+left: calc(50% - 328px/2);
+top: 33px;
+font-family: 'paragraph';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 16px;
+color: #000000;
+}
+.Result{
+position: relative;
+width: 328px;
+height: 36px;
+top: 33px;
+left: calc(50% - 328px/2);
+font-family: 'Heading1';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 36px;
+color: #000000;
+}
+.black-bg {
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  position: fixed; padding: 20px;
+}
+.white-bg {
+  width: 100%; background: white;
+  border-radius: 8px;
+  padding: 20px;
+}
 .profile{
 position: relative;
 width: 328px;
@@ -30,6 +86,85 @@ height: 283px;
 left: 20px;
 top: 79px;
 background: #F5F6FA;
+}
+.result_image{
+position: relative;
+width: 328px;
+height: 152px;
+left: 16px;
+top: 15px;
+background: #D0D0D0;
+}
+.result_decription{
+  position: absolute;
+  left: calc(50% - 328px/2);
+  top: 250px;
+  width: 328px;
+  height: 228px;
+  font-family: "paragraph";
+  color:white;
+  background:#643ce9;
+  font-size: 15px;
+  border-radius: 8px;
+  border: none;
+  display: block;
+}
+.result_button{
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 20px;
+gap: 4px;
+position: absolute;
+width: 328px;
+height: 56px;
+left: calc(50% - 328px/2);
+background: #FFFFFF;
+border: 1px solid #E4E4E7;
+border-radius: 8px;
+font-family: 'Heading2';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 32px;
+color: #000000;
+
+flex: none;
+order: 0;
+flex-grow: 1;
+}
+.backward{
+position: relative;
+width: 80px;
+height: 24px;
+left: 4px;
+top: 5px;
+font-family: 'Heading1';
+font-style: normal;
+font-weight: 1700;
+font-size: 14px;
+line-height: 24px;
+text-align: center;
+color: #000000;
+border: none;
+background-color: white;
+}
+.restaurant_recommand{
+  position: relative;
+  top:-20px;
+  left:12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4px;
+  gap: 12px;
+  width: 296px;
+  height: 100px;
+  background: #FFFFFF;
+  border-radius: 8px;
 }
 .background{
   height: 640px;
@@ -49,6 +184,38 @@ background: #F5F6FA;
   top: 28px;
   text-align: center;
 }
+.share_small{
+  /* Link */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 5px;
+
+position: absolute;
+width: 67px;
+height: 20px;
+left: calc(50% - 67px/2);
+top: 592px;
+}
+.titledocs{
+position: relative;
+width: 328px;
+height: 40px;
+left: calc(50% - 328px/2);
+top: 90px;
+
+font-family: 'Paragraph';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 20px;
+text-align: center;
+
+color: #000000;
+}
 .paragraph{
 position: relative;
 width: 314px;
@@ -56,7 +223,6 @@ height: 36px;
 left: calc(50% - 314px/2);
 font-family: 'Heading1';
 font-style: normal;
-font-weight: 500;
 font-size: 24px;
 line-height: 36px;
 text-align: center;
@@ -77,9 +243,60 @@ color: #000000;
   margin: auto;
   display: block;
 }
+.Button_w{
+  position: absolute;
+  left: calc(50% - 335px/2);
+  top: 230px;
+  font-family: "Heading2";
+  color:black;
+  background:white;
+  font-size: 20px;
+  padding: 15px 150px;
+  border-radius: 8px;
+  border:1px solid #A1A1AA;
+  margin: auto;
+  display: block;
+  text-align: left;
+}
+.Button_four{
+position: absolute;
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 20px;
+gap: 4px;
+
+width: 120px;
+height: 120px;
+
+background: #FFFFFF;
+border: 1px solid #A1A1AA;
+border-radius: 8px;
+
+flex: none;
+order: 0;
+flex-grow: 0;
+
+/* Heading2 */
+font-family: 'Heading1';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 32px;
+/* identical to box height, or 160% */
+text-align: center;
+
+color: #000000;
+
+flex: none;
+order: 0;
+flex-grow: 1;
+}
 @font-face {
   font-family:'Heading1';
-  src: url('assets/fonts/Pretendard-SemiBold.otf') format('opentype');
+  src: url('assets/fonts/Pretendard-Bold.otf') format('opentype');
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -151,7 +368,7 @@ color: #000000;
 }
 @font-face {
   font-family:'Paragraph';
-  src: url('assets/fonts/Pretendard-SemiBold.otf') format('opentype');
+  src: url('assets/fonts/Pretendard-Regular.otf') format('opentype');
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
