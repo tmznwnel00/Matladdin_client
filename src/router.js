@@ -12,7 +12,10 @@ import matbti from './views/Mat-Matbti.vue'
         {
             path: '/',
             name: 'home',
-            component: Home
+            component: Home,
+            meta: {
+                title : "맛라딘 v2.1"
+            }
         },
         {
             path: '/page1',

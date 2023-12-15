@@ -137,9 +137,9 @@ flex-grow: 1;
 }
 .backward{
 position: relative;
-width: 80px;
+width: 100px;
 height: 24px;
-left: 4px;
+left: -6px;
 top: 5px;
 font-family: 'Heading1';
 font-style: normal;
