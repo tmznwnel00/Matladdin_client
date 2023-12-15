@@ -14,15 +14,19 @@ import router from '../router';
 export default {
   methods : {
     push_next1(){
+      this.$root.question_count++;
       router.push("/page3");
     },
     push_next2(){
+      this.$root.question_count++;
       router.push("/page3");
     },
     push_next3(){
+      this.$root.question_count++;
       router.push("/page3");
     },
     push_next4(){
+      this.$root.question_count++;
       router.push("/page3");
     }
   }
