@@ -6,7 +6,7 @@
     <p class="paragraph" style="top: 30px; font-weight: 100;">맛집과 메뉴를 추천받아요</p>
     <Button class="Button_h" v-on:click="use_api()">시작하기</Button>
     <p class="titledocs">오늘 점심 뭐먹지? 어디서 식사하지? 고민하는 시간이 <br> 아까운 당신! 빠르게 정보를 찾아보아요.</p>
-    <div @click="modal_isOpen = true">
+    <div>
       <img class="share_small" src="../assets/Share_small.png">
     </div>
   </div>

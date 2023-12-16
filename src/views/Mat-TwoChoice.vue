@@ -1,8 +1,17 @@
 <template>
     <div>
+        <progress id="progress" :value="this.$root.question_count" min="0" max="10"></progress>
+        <p id="progress_score">{{this.$root.question_count}}/10</p>
         <p class="Question">{{this.$root.question}}</p>
         <Button class="Button_w" v-on:click="use_api('button1')">{{this.$root.option1}}</Button>
         <Button class="Button_w" style="top: 300px;" v-on:click="use_api('button2')">{{this.$root.option2}}</Button>
+    </div>
+    <div>
+        <p class="Question">질문이 해당영역에 노출됩니다.</p>
+        <Button class="Button_w" v-on:click="push_next1">답변</Button>
+        <Button class="Button_w" style="top: 300px;" v-on:click="push_next2">답변</Button>
+        <Button class="Button_w" style="top: 370px;" v-on:click="push_next3">답변</Button>
+        <Button class="Button_w" style="top: 440px;" v-on:click="push_next4">답변</Button>
     </div>
 </template>
 
@@ -11,6 +20,10 @@ import router from '../router';
 import axios from 'axios';
 
 export default {
+  data(){
+    return{
+    }
+  },
   methods : {
     async use_api(button){
       try {

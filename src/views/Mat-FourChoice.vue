@@ -1,5 +1,7 @@
 <template>
     <div>
+        <progress id="progress" :value="this.$root.question_count" min="0" max="10"></progress>
+        <p id="progress_score">{{this.$root.question_count}}/10</p>
         <p class="Question">{{this.$root.question}}</p>
         <Button class="Button_four" style="top: 230px; left: calc(50% - 270px/2);" v-on:click="use_api('button1')">{{this.$root.option1}}</Button>
         <Button class="Button_four" style="top: 230px; right: calc(50% - 270px/2);" v-on:click="use_api('button2')">{{this.$root.option2}}</Button>

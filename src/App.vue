@@ -1,19 +1,15 @@
 <!-- App.vue -->
 <template>
-  <div class="background">
-    <div class="black-bg" v-if="modal_isOpen">
-    <div class="white-bg">
-      <h4>이런!</h4>
-      <p>추후 업데이트 예정입니다</p>
-      <button v-on:click="modal_isOpen = false">닫기</button>
-    </div>
+  <div v-on:mouseover="getLocation">
+    여기에 마우스 올려봐 : {{ textContent }}
   </div>
+  <div class="background">
     <router-view/>
   </div>
 </template>
 
 <script>
-
+// import {onBeforeRouteLeave} from 'vue-router'
 export default {
   name: 'App',
   components: {
@@ -35,11 +31,62 @@ export default {
     }
   },
   methods : {
+    getLocation(){
+      if(!("geolocation" in navigator)) {
+        this.textContent = 'Geolocation is not available.';
+        return;
+        }
+        this.textContent = 'Locating...'
+        
+        // get position
+        navigator.geolocation.getCurrentPosition(pos => {
+        this.latitude = pos.coords.latitude;
+        this.longitude = pos.coords.longitude;
+        this.textContent = 'Your location data is ' + this.latitude + ', ' + this.longitude
+        }, err => {
+        this.textContent = err.message;
+        })
+    }
   }
 }
 </script>
 
 <style>
+ #progress {
+    appearance: none;
+}
+#progress::-webkit-progress-bar {
+  position: relative;
+  width: 328px;
+  height: 8px;
+  left: 16px;
+  top: 28px;
+  background: #EEEFF5;
+  border-radius: 8px;
+}
+#progress::-webkit-progress-value {
+  position: relative;
+  width: 30px;
+  height: 8px;
+  left: 0px;
+  top: calc(50% - 8px/2);
+  background: #643CE9;
+  border-radius: 12px;
+}
+#progress_score{
+  position: absolute;
+  width: 328px;
+  height: 14px;
+  left: calc(50% - 328px/2 + 1px);
+  top: 44px;
+  font-family: 'Caption';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
+  color: #3F3F46;
+}
 .Question{
 position: relative;
 width: 328px;
@@ -140,7 +187,6 @@ font-weight: 700;
 font-size: 20px;
 line-height: 32px;
 color: #000000;
-
 flex: none;
 order: 0;
 flex-grow: 1;
@@ -195,9 +241,6 @@ background-color: white;
   text-align: center;
 }
 .share_small{
-  /* Link */
-
-/* Auto layout */
 display: flex;
 flex-direction: row;
 align-items: center;
