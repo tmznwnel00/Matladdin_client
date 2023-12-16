@@ -10,8 +10,8 @@
         <img class="result_image" v-if="matbti_gaseungbi()" src="../assets/mat_fairies/gaseungbi.png" style="top:-5px">
         <img class="result_image" v-if="matbti_newfood()" src="../assets/mat_fairies/newfood.png" style="top:-5px">
         <div class="result_decription" style="height: 200px;">
-            <p class="menu_title">{{ preference[this.$root.matbti][3] }}</p>
-            <p style="padding: 20px 15px">{{ preference[this.$root.matbti][0] }}</p>
+            <p class="menu_title" style="top:-35px">{{ preference[this.$root.matbti][3] }}</p>
+            <p style="padding: 30px 15px; height: 200px;">{{ preference[this.$root.matbti][0] }}</p>
         </div>
         <div class="boxbox">
             <p class="boxtitle">잘 맞는 유형</p>
@@ -148,8 +148,9 @@ export default {
 }
 .boxtext{
     position:absolute;
-    left:30px;
-    top:140px;
+    margin-left:15px;
+    left:20px;
+    top:120px;
     width: 123px;
     height: 20px;
     font-family: 'Paragraph';

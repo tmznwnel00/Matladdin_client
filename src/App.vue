@@ -17,7 +17,17 @@ export default {
   },
   data(){
     return {
+      modal_isOpen: false,
       question_count: 0,
+      session_id: null,
+      question: null,
+      option1: null,
+      option2: null,
+      option3: null,
+      option4: null,
+      result_food: null,
+      matbti_string: null,
+      restaurant_list:[],
       latitude: '',
       longitude:'',
       textContent:'',
@@ -144,7 +154,7 @@ background: #F5F6FA;
 .result_image{
 position: relative;
 width: 328px;
-height: 152px;
+height: 188px;
 left: 16px;
 top: 15px;
 background: white;
@@ -152,9 +162,9 @@ background: white;
 .result_decription{
   position: absolute;
   left: calc(50% - 328px/2);
-  top: 250px;
+  top: 290px;
   width: 328px;
-  height: 228px;
+  height: 198px;
   font-family: "paragraph";
   color:white;
   background:#643ce9;

@@ -9,8 +9,8 @@
         <img class="result_image" v-if="matbti_gaseungbi()" src="../assets/mat_fairies/gaseungbi.png">
         <img class="result_image" v-if="matbti_newfood()" src="../assets/mat_fairies/newfood.png">
         <div class="result_decription">
-            <p class="menu_title">메뉴명</p>
-            <p style="padding: 20px 15px">해당 영역에 결과물에 대한 설명이 기재됩니다.</p>
+            <p class="menu_title" style="top:-35px">메뉴명</p>
+            <p style="padding: 30px 15px">해당 영역에 결과물에 대한 설명이 기재됩니다.</p>
         </div>
         <button class="result_button" style="top: 493px;" v-on:click="push_restaurant">식당 추천받기</button>
         <button class="result_button" style="top: 563px;" v-on:click="push_matbti">내 맛BTI 확인하기</button>
