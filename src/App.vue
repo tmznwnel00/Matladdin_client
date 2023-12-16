@@ -17,7 +17,7 @@ export default {
   },
   data(){
     return {
-      modal_isOpen: false,
+      modal_isOpen : false,
       question_count: 0,
       session_id: null,
       question: null,
@@ -26,15 +26,8 @@ export default {
       option3: null,
       option4: null,
       result_food: null,
-      matbti_string: null,
-      restaurant_list:[],
-      latitude: '',
-      longitude:'',
-      textContent:'',
-      matbti:"honbap",
-      mat_fairies:{
-        혼밥:"../assets/mat_fairies/honbap.png"
-      }
+      matbti: null,
+      restaurant_list:[]
     }
   },
   methods : {
