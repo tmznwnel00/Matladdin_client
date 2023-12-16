@@ -17,11 +17,17 @@ export default {
   },
   data(){
     return {
+      modal_isOpen : false,
       question_count: 0,
-      latitude: '',
-      longitude:'',
-      textContent:'',
-      matbti:"혼밥"
+      session_id: null,
+      question: null,
+      option1: null,
+      option2: null,
+      option3: null,
+      option4: null,
+      result_food: null,
+      matbti: null,
+      restaurant_list:[]
     }
   },
   methods : {

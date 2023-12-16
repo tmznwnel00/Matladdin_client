@@ -5,8 +5,8 @@
         <p class="Result" style="top:19px">결과가 해당영역에 노출됩니다.</p>
         <img class="result_image" src="../assets/unknown.png" style="top:-5px">
         <div class="result_decription" style="height: 200px;">
-            <p class="menu_title">{{ this.$root.matbti }}</p>
-            <p style="padding: 20px 15px">{{ preference[this.$root.matbti][0] }}</p>
+            <p class="menu_title">{{this.$root.matbti}}</p>
+            <p style="padding: 20px 15px">해당 영역에 결과물에 대한 설명이 기재됩니다.</p>
         </div>
         <div class="boxbox">
             <p class="boxtitle">잘 맞는 유형</p>
