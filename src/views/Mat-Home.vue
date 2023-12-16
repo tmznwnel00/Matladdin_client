@@ -24,17 +24,12 @@ export default {
     async use_api(){
       try {const response = await axios.post('http://110.165.19.54:5000/chat');
       console.log(response.data);
-      this.$root.question_count = 1;
-      this.$root.question = response.data['question'];
-      this.$root.option1 = response.data['option_list'][0];
-      this.$root.option2 = response.data['option_list'][1];
-      this.$root.option3 = response.data['option_list'][2];
-      this.$root.option4 = response.data['option_list'][3];
-      this.$root.session_id = response.data['uuid'];
-      if (this.$root.option3) {
-        router.push("/page2");
+      this.$root.question[response.data['uuid']] = response.data['question'];
+      console.log(this.$root.question)
+      if (response.data['option_list'][2]) {
+        router.push("/page2?session=" + response.data['uuid'] + "&step=1" + "&option1=" + response.data['option_list'][0] + "&option2=" + response.data['option_list'][1] + "&option3=" + response.data['option_list'][2] + "&option4=" + response.data['option_list'][3]);
       } else {
-        router.push("/page1");
+        router.push("/page1?session=" + response.data['uuid'] + "&step=1" + "&option1=" + response.data['option_list'][0] + "&option2=" + response.data['option_list'][1]);
       }
     } catch (error) {
       console.log(error);

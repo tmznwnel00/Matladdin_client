@@ -20,27 +20,50 @@ import matbti from './views/Mat-Matbti.vue'
         {
             path: '/page1',
             name: '2choice',
-            component: two_choice
+            component: two_choice,
+            query: {
+                session: null,
+                step: '1',
+                option1: null,
+                option2: null
+            }
         },
         {
             path: '/page2',
             name: '4choice',
-            component: four_choice
+            component: four_choice,
+            query: {
+                session: null,
+                step: '1',
+                option1: null,
+                option2: null,
+                option3: null,
+                option4: null
+            }
         },
         {
             path: '/page3',
             name: 'result',
-            component: resultScreen
+            component: resultScreen,
+            query: {
+                session: null
+            }
         },
         {
             path: '/restaurant',
             name: 'restaurant',
-            component: restaurant
+            component: restaurant,
+            query: {
+                session: null
+            }
         },
         {
             path: '/mat-bti',
             name: 'matbti',
-            component: matbti
+            component: matbti,
+            query: {
+                session: null
+            }
         }
     ]
 });
