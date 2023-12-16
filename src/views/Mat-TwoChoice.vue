@@ -36,7 +36,7 @@ export default {
       const response = await axios.post('http://110.165.19.54:5000/chat_completion', payload, {params: queryParams});
       console.log(response.data);
       const question_count = response.data['step'];
-      if (question_count == '11') {
+      if (question_count == '9') {
         this.delete_session();
       } else {
 
