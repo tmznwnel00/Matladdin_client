@@ -1,7 +1,7 @@
 <!-- App.vue -->
 <template>
   <div v-on:mouseover="getLocation">
-    여기에 마우스 올려봐 : {{ textContent }}
+    <!-- 여기에 마우스 올려봐 : {{ textContent }} -->
   </div>
   <div class="background">
     <router-view/>
@@ -21,7 +21,10 @@ export default {
       latitude: '',
       longitude:'',
       textContent:'',
-      matbti:"혼밥"
+      matbti:"honbap",
+      mat_fairies:{
+        혼밥:"../assets/mat_fairies/honbap.png"
+      }
     }
   },
   methods : {
@@ -144,7 +147,7 @@ width: 328px;
 height: 152px;
 left: 16px;
 top: 15px;
-background: #D0D0D0;
+background: white;
 }
 .result_decription{
   position: absolute;

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="Title">맛라딘 v2.1</p>
+    <p class="Title">맛라딘 v3.1</p>
     <img class="profile" src="../assets/profile_image.png">
     <p class="paragraph" style="top: 55px; font-weight: 200;">나의 맛BTI를 파악하고</p>
     <p class="paragraph" style="top: 30px; font-weight: 100;">맛집과 메뉴를 추천받아요</p>
