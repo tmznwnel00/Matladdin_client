@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img style="height:32px; position:absolute; left:330px; top: 40px;" src="../assets/Title.png">
+    <img style="height:32px; position:relative; left:130px; top: 40px;" src="../assets/Title.png">
     <img class="profile" src="../assets/MatBTI-Main.png">
     <p class="paragraph" style="top: 55px; font-weight: 200;">나의 맛BTI를 파악하고</p>
     <p class="paragraph" style="top: 30px; font-weight: 100;">맛집과 메뉴를 추천받아요</p>

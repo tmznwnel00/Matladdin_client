@@ -139,7 +139,7 @@ color: #000000;
 .profile{
 position: relative;
 width: 328px;
-height: 283px;
+height: 251px;
 left: 20px;
 top: 79px;
 background: #F5F6FA;
