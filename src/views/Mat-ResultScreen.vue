@@ -66,7 +66,7 @@ export default {
 
         const search = '강남구 스테이크 맛집';
         const queryParams = { search: search };
-        const response = await axios.get('http://110.165.19.54:5000/restuarant', {params: queryParams})
+        const response = await axios.get('https://110.165.19.54:5000/restuarant', {params: queryParams})
         console.log(response.data);
         this.$root.restaurant_list[this.$route.query.session] = response.data['items'];
         router.push("/restaurant?session=" + this.$route.query.session);
@@ -77,7 +77,7 @@ export default {
     },
     async push_matbti(){
       const queryParams = { uuid: this.$route.query.session };
-      const response = await axios.get('http://110.165.19.54:5000/matbti', {params: queryParams});
+      const response = await axios.get('https://110.165.19.54:5000/matbti', {params: queryParams});
       console.log(response.data);
       this.$root.matbti[this.$route.query.session] = response.data['matbti'];
       router.push("/mat-bti?session=" + this.$route.query.session);
