@@ -32,10 +32,11 @@ export default {
       const payload = {
         "answer": answer
       };
-      const response = await axios.post('https://110.165.19.54:5000/chat_completion', payload, {params: queryParams});
+      const response = await axios.post('http://110.165.19.54:5000/chat_completion', payload, {params: queryParams});
       console.log(response.data);
       const question_count = response.data['step'];
-      if (question_count == '9') {
+
+      if (! response.data['question']) {
         this.delete_session();
       } else {
         this.session = response.data['uuid'];
@@ -54,7 +55,7 @@ export default {
     },
     async delete_session(){
       const queryParams = { uuid: this.$route.query.session};
-      const response = await axios.delete('https://110.165.19.54:5000/chat', {params: queryParams});
+      const response = await axios.delete('http://110.165.19.54:5000/chat', {params: queryParams});
       this.$root.result_food[this.$route.qeury.session] = response.data['food'];
       console.log(this.$root.result_food);
       router.push("/page3?session=" + this.$route.query.session);
