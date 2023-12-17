@@ -55,9 +55,18 @@ export default {
     },
     async push_restaurant(){
       try {
+        const url = 'https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?coords=126.9913201,37.5666936&output=json&orders=legalcode'
+        const headers = {
+            'X-NCP-APIGW-API-KEY-ID' : process.env.CLIENT_ID,
+            'X-NCP-APIGW-API-KEY' : process.env.CLIENT_SECRET
+        }
+        const res = await axios.get(url, {headers})
+        console.log(res.data);
+
+
         const search = '강남구 스테이크 맛집';
         const queryParams = { search: search };
-        const response = await axios.get('http://110.165.19.54:5000/restuarant', {params: queryParams})
+        const response = await axios.get('https://110.165.19.54:5000/restuarant', {params: queryParams})
         console.log(response.data);
         this.$root.restaurant_list[this.$route.query.session] = response.data['items'];
         router.push("/restaurant?session=" + this.$route.query.session);
@@ -68,7 +77,7 @@ export default {
     },
     async push_matbti(){
       const queryParams = { uuid: this.$route.query.session };
-      const response = await axios.get('http://110.165.19.54:5000/matbti', {params: queryParams});
+      const response = await axios.get('https://110.165.19.54:5000/matbti', {params: queryParams});
       console.log(response.data);
       this.$root.matbti[this.$route.query.session] = response.data['matbti'];
       router.push("/mat-bti?session=" + this.$route.query.session);

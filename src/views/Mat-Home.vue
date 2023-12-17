@@ -22,7 +22,7 @@ import axios from 'axios';
 export default {
   methods : {
     async use_api(){
-      try {const response = await axios.post('http://110.165.19.54:5000/chat');
+      try {const response = await axios.post('https://110.165.19.54:5000/chat');
       console.log(response.data);
       this.$root.question[response.data['uuid']] = response.data['question'];
       console.log(this.$root.question)

@@ -21,7 +21,8 @@ export default {
       question: {},
       result_food: {},
       matbti: {},
-      restaurant_list:{}
+      restaurant_list:{},
+      location:[]
     }
   },
   methods : {
